@@ -79,24 +79,48 @@
 
     /* ================= HERO ================= */
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 50px 20px;
-
-      background:
-      linear-gradient(rgba(0,0,0,0.55),
-      rgba(0,0,0,0.55)),
-      url("thar.jpg") center/cover no-repeat;
-    }
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:50px 20px;
+  position:relative;
+  overflow:hidden;
+  background:#000;
+}
 
     .hero-content {
       color: white;
       max-width: 800px;
     }
+  .hero video{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
 
     .hero-content h1 {
       font-size: 55px;
@@ -420,6 +444,9 @@
   <!-- ================= HERO ================= -->
 
   <section class="hero" id="home">
+    <video autoplay muted loop playsinline>
+    <source src="Amarkrupa.mp4" type="video/mp4">
+</video>
 
     <div class="hero-content">
 
