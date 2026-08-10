@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Amar Krupa Self Drive | Botad</title>
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Amar Krupa Self Drive | Botad</title>  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  <style>
 
     * {
       margin: 0;
@@ -27,7 +19,6 @@
       background: #f5f7fa;
       color: #172033;
     }
-
 
     /* ================= HEADER ================= */
 
@@ -76,51 +67,44 @@
       color: #07549b;
     }
 
-
     /* ================= HERO ================= */
 
-.hero{
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:50px 20px;
-  position:relative;
-  overflow:hidden;
-  background:#000;
-}
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+    }
 
     .hero-content {
+      position: relative;
+      z-index: 2;
       color: white;
       max-width: 800px;
     }
-  .hero video{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:0;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.55);
-  z-index:1;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-}
 
     .hero-content h1 {
       font-size: 55px;
@@ -166,7 +150,6 @@
       transform: translateY(-3px);
     }
 
-
     /* ================= SECTIONS ================= */
 
     section {
@@ -184,7 +167,6 @@
       color: #e87922;
     }
 
-
     /* ================= ABOUT ================= */
 
     .about {
@@ -195,8 +177,7 @@
       line-height: 1.8;
     }
 
-
-    /* ================= QUICK CONTACT ICONS ================= */
+    /* ================= QUICK CONTACT ================= */
 
     .quick-contact {
       display: flex;
@@ -237,38 +218,47 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
 
-    /* Call */
     .call-icon {
       background: #07549b;
     }
 
-    /* WhatsApp */
     .whatsapp-icon {
       background: #25D366;
     }
 
-    /* Instagram */
     .instagram-icon {
       background: #E1306C;
     }
 
+    /* ================= OUR CARS ================= */
 
-    /* ================= OUR CAR ================= */
+    .cars-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
     .car-card {
-      max-width: 500px;
-      margin: auto;
       background: white;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 8px 30px rgba(0,0,0,0.12);
       text-align: center;
+      transition: 0.3s;
+    }
+
+    .car-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
     }
 
     .car-card img {
       width: 100%;
       height: 350px;
       object-fit: cover;
+      display: block;
     }
 
     .car-info {
@@ -285,7 +275,6 @@
       color: #555;
       margin-bottom: 15px;
     }
-
 
     /* ================= WHY CHOOSE US ================= */
 
@@ -313,7 +302,6 @@
       margin-bottom: 10px;
     }
 
-
     /* ================= CONTACT ================= */
 
     .contact {
@@ -332,7 +320,6 @@
       margin-bottom: 20px;
     }
 
-
     /* ================= FOOTER ================= */
 
     footer {
@@ -345,7 +332,6 @@
     footer p {
       margin: 5px;
     }
-
 
     /* ================= MOBILE ================= */
 
@@ -372,6 +358,10 @@
 
       .hero-content p {
         font-size: 18px;
+      }
+
+      .cars-container {
+        grid-template-columns: 1fr;
       }
 
       .features {
@@ -401,335 +391,301 @@
       }
     }
 
-  </style>
-</head>
+  </style></head><body>  <!-- ================= HEADER ================= -->  <header><div class="logo">
 
+  <img src="logo.png"
+       alt="Amar Krupa Self Drive Logo">
 
-<body>
+  <h2>
+    AMAR KRUPA<br>
+    <span>SELF DRIVE</span>
+  </h2>
 
+</div>
 
-  <!-- ================= HEADER ================= -->
+<nav>
 
-  <header>
+  <a href="#home">Home</a>
 
-    <div class="logo">
+  <a href="#cars">Our Cars</a>
 
-      <img src="logo.png"
-           alt="Amar Krupa Self Drive Logo">
+  <a href="#about">About</a>
 
-      <h2>
-        AMAR KRUPA<br>
-        <span>SELF DRIVE</span>
-      </h2>
+  <a href="#contact">Contact</a>
 
-    </div>
+</nav>
 
+  </header>  <!-- ================= HERO ================= -->  <section class="hero" id="home"><video autoplay muted loop playsinline>
 
-    <nav>
+  <source src="Amarkrupa.mp4" type="video/mp4">
 
-      <a href="#home">Home</a>
-
-      <a href="#cars">Our Car</a>
-
-      <a href="#about">About</a>
-
-      <a href="#contact">Contact</a>
-
-    </nav>
-
-  </header>
-
-
-
-  <!-- ================= HERO ================= -->
-
-  <section class="hero" id="home">
-    <video autoplay muted loop playsinline>
-    <source src="Amarkrupa.mp4" type="video/mp4">
 </video>
 
-    <div class="hero-content">
+<div class="hero-content">
 
-      <h1>
-        AMAR KRUPA <span>SELF DRIVE</span>
-      </h1>
+  <h1>
+    AMAR KRUPA <span>SELF DRIVE</span>
+  </h1>
+
+  <p>
+    Your Journey, Your Control
+  </p>
+
+  <a href="#cars"
+     class="btn btn-primary">
+
+    🚗 View Our Cars
+
+  </a>
+
+  <a href="https://wa.me/919313045252"
+     class="btn btn-orange">
+
+    💬 Book on WhatsApp
+
+  </a>
+
+</div>
+
+  </section>  <!-- ================= ABOUT ================= -->  <section id="about"><h2 class="section-title">
+  About <span>Us</span>
+</h2>
+
+<div class="about">
+
+  <p>
+
+    Welcome to
+    <b>Amar Krupa Self Drive</b>.
+
+    Enjoy your journey with our
+    comfortable and reliable
+    self-drive car service in Botad.
+
+    Choose your destination,
+    take control and enjoy the ride.
+
+  </p>
+
+</div>
+
+  </section>  <!-- ================= QUICK CONTACT ================= -->  <div class="quick-contact"><a href="tel:+919313045252"
+   class="quick-contact-item call-icon">
+
+  <i class="fa-solid fa-phone"></i>
+
+  <span>Call Now</span>
+
+</a>
+
+
+<a href="https://wa.me/919313045252"
+   target="_blank"
+   class="quick-contact-item whatsapp-icon">
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+  <span>WhatsApp</span>
+
+</a>
+
+
+<a href="https://www.instagram.com/amarkrupa_self_drive"
+   target="_blank"
+   class="quick-contact-item instagram-icon">
+
+  <i class="fa-brands fa-instagram"></i>
+
+  <span>Instagram</span>
+
+</a>
+
+  </div>  <!-- ================= OUR CARS ================= -->  <section id="cars"><h2 class="section-title">
+  Our <span>Cars</span>
+</h2>
+
+
+<div class="cars-container">
+
+
+  <!-- ================= THAR ================= -->
+
+  <div class="car-card">
+
+    <img src="thar.jpg"
+         alt="Mahindra Thar">
+
+    <div class="car-info">
+
+      <h3>
+        Mahindra Thar
+      </h3>
 
       <p>
-        Your Journey, Your Control
+        🚗 Self Drive Available
       </p>
 
-      <a href="#cars"
+      <p>
+        📍 Botad, Gujarat
+      </p>
+
+      <a href="tel:+919313045252"
          class="btn btn-primary">
-        🚗 View Our Car
+
+        📞 Call Now
+
       </a>
 
       <a href="https://wa.me/919313045252"
+         target="_blank"
          class="btn btn-orange">
-        💬 Book on WhatsApp
+
+        💬 Book Now
+
       </a>
 
     </div>
-
-  </section>
-
-
-
-  <!-- ================= ABOUT ================= -->
-
-  <section id="about">
-
-    <h2 class="section-title">
-      About <span>Us</span>
-    </h2>
-
-    <div class="about">
-
-      <p>
-
-        Welcome to
-        <b>Amar Krupa Self Drive</b>.
-
-        Enjoy your journey with our
-        comfortable and reliable
-        self-drive car service in Botad.
-
-        Choose your destination,
-        take control and enjoy the ride.
-
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ================= QUICK CONTACT ================= -->
-
-  <div class="quick-contact">
-
-
-    <!-- CALL -->
-
-    <a href="tel:+919313045252"
-       class="quick-contact-item call-icon">
-
-      <i class="fa-solid fa-phone"></i>
-
-      <span>Call Now</span>
-
-    </a>
-
-
-
-    <!-- WHATSAPP -->
-
-    <a href="https://wa.me/919313045252"
-       target="_blank"
-       class="quick-contact-item whatsapp-icon">
-
-      <i class="fa-brands fa-whatsapp"></i>
-
-      <span>WhatsApp</span>
-
-    </a>
-
-
-
-    <!-- INSTAGRAM -->
-
-    <a href="https://www.instagram.com/amarkrupa_self_drive"
-       target="_blank"
-       class="quick-contact-item instagram-icon">
-
-      <i class="fa-brands fa-instagram"></i>
-
-      <span>Instagram</span>
-
-    </a>
-
 
   </div>
 
 
+  <!-- ================= SWIFT ================= -->
 
-  <!-- ================= OUR CAR ================= -->
+  <div class="car-card">
 
-  <section id="cars">
+    <img src="swift.jpg"
+         alt="Maruti Suzuki Swift">
 
-    <h2 class="section-title">
-      Our <span>Car</span>
-    </h2>
+    <div class="car-info">
 
+      <h3>
+        Maruti Suzuki Swift
+      </h3>
 
-    <div class="car-card">
+      <p>
+        🚗 Self Drive Available
+      </p>
 
-      <img src="thar.jpg"
-           alt="Mahindra Thar">
+      <p>
+        📍 Botad, Gujarat
+      </p>
 
+      <a href="tel:+919313045252"
+         class="btn btn-primary">
 
-      <div class="car-info">
+        📞 Call Now
 
-        <h3>
-          Mahindra Thar
-        </h3>
+      </a>
 
-        <p>
-          🚗 Self Drive Available
-        </p>
+      <a href="https://wa.me/919313045252"
+         target="_blank"
+         class="btn btn-orange">
 
-        <p>
-          📍 Botad, Gujarat
-        </p>
+        💬 Book Now
 
-
-        <a href="tel:+919313045252"
-           class="btn btn-primary">
-
-          📞 Call Now
-
-        </a>
-
-
-        <a href="https://wa.me/919313045252"
-           target="_blank"
-           class="btn btn-orange">
-
-          💬 Book Now
-
-        </a>
-
-      </div>
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
 
+</div>
 
-  <!-- ================= WHY CHOOSE US ================= -->
-
-  <section>
-
-    <h2 class="section-title">
-      Why <span>Choose Us?</span>
-    </h2>
+  </section>  <!-- ================= WHY CHOOSE US ================= -->  <section><h2 class="section-title">
+  Why <span>Choose Us?</span>
+</h2>
 
 
-    <div class="features">
+<div class="features">
 
 
-      <div class="feature">
+  <div class="feature">
 
-        <div class="icon">
-          🚗
-        </div>
-
-        <h3>
-          Self Drive
-        </h3>
-
-        <p>
-          Drive your way and enjoy
-          complete freedom.
-        </p>
-
-      </div>
-
-
-
-      <div class="feature">
-
-        <div class="icon">
-          ⭐
-        </div>
-
-        <h3>
-          Quality Service
-        </h3>
-
-        <p>
-          We provide a smooth and
-          convenient experience.
-        </p>
-
-      </div>
-
-
-
-      <div class="feature">
-
-        <div class="icon">
-          📞
-        </div>
-
-        <h3>
-          Easy Booking
-        </h3>
-
-        <p>
-          Call or WhatsApp us
-          for quick booking.
-        </p>
-
-      </div>
-
-
+    <div class="icon">
+      🚗
     </div>
 
-  </section>
+    <h3>
+      Self Drive
+    </h3>
+
+    <p>
+      Drive your way and enjoy
+      complete freedom.
+    </p>
+
+  </div>
 
 
+  <div class="feature">
 
-  <!-- ================= CONTACT ================= -->
-
-  <section class="contact"
-           id="contact">
-
-
-    <h2 class="section-title">
-      Contact <span>Us</span>
-    </h2>
-
-
-    <div class="contact-info">
-
-      📞 Mobile:
-      <b>9313045252</b>
-
-      <br>
-
-      📍 Address:
-      <b>Botad, Gujarat - 364710</b>
-
+    <div class="icon">
+      ⭐
     </div>
 
+    <h3>
+      Quality Service
+    </h3>
 
     <p>
-      We are happy to help you
-      with your self-drive car booking.
+      We provide a smooth and
+      convenient experience.
     </p>
 
-
-  </section>
-
+  </div>
 
 
-  <!-- ================= FOOTER ================= -->
+  <div class="feature">
 
-  <footer>
+    <div class="icon">
+      📞
+    </div>
+
+    <h3>
+      Easy Booking
+    </h3>
 
     <p>
-      © 2026 Amar Krupa Self Drive.
-      All Rights Reserved.
+      Call or WhatsApp us
+      for quick booking.
     </p>
 
-    <p>
-      Your Journey, Your Control
-    </p>
-
-  </footer>
+  </div>
 
 
-</body>
+</div>
+
+  </section>  <!-- ================= CONTACT ================= -->  <section class="contact"
+           id="contact"><h2 class="section-title">
+  Contact <span>Us</span>
+</h2>
+
+<div class="contact-info">
+
+  📞 Mobile:
+  <b>9313045252</b>
+
+  <br>
+
+  📍 Address:
+  <b>Botad, Gujarat - 364710</b>
+
+</div>
+
+<p>
+  We are happy to help you
+  with your self-drive car booking.
+</p>
+
+  </section>  <!-- ================= FOOTER ================= -->  <footer><p>
+  © 2026 Amar Krupa Self Drive.
+  All Rights Reserved.
+</p>
+
+<p>
+  Your Journey, Your Control
+</p>
+
+  </footer></body>
 </html>
