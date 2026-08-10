@@ -1,8 +1,15 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Amar Krupa Self Drive | Botad</title>  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Amar Krupa Self Drive | Botad</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
 
     * {
       margin: 0;
@@ -128,6 +135,8 @@
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -230,7 +239,7 @@
       background: #E1306C;
     }
 
-    /* ================= OUR CARS ================= */
+    /* ================= CARS ================= */
 
     .cars-container {
       display: grid;
@@ -276,6 +285,100 @@
       margin-bottom: 15px;
     }
 
+    /* ================= BOOKING ================= */
+
+    .booking-section {
+      background: #eef3f8;
+    }
+
+    .booking-box {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    .booking-box h3 {
+      text-align: center;
+      color: #07549b;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .booking-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #172033;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d5dbe3;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      background: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #07549b;
+      box-shadow: 0 0 0 2px rgba(7,84,155,0.10);
+    }
+
+    .form-group textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .booking-button {
+      width: 100%;
+      background: #25D366;
+      color: white;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .booking-button:hover {
+      background: #1da851;
+      transform: translateY(-2px);
+    }
+
+    .booking-note {
+      text-align: center;
+      margin-top: 15px;
+      color: #777;
+      font-size: 14px;
+    }
+
     /* ================= WHY CHOOSE US ================= */
 
     .features {
@@ -303,389 +406,3 @@
     }
 
     /* ================= CONTACT ================= */
-
-    .contact {
-      background: #07549b;
-      color: white;
-      text-align: center;
-    }
-
-    .contact .section-title {
-      color: white;
-    }
-
-    .contact-info {
-      font-size: 20px;
-      line-height: 2;
-      margin-bottom: 20px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 768px) {
-
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      nav {
-        text-align: center;
-      }
-
-      nav a {
-        margin: 5px;
-        font-size: 14px;
-        display: inline-block;
-      }
-
-      .hero-content h1 {
-        font-size: 38px;
-      }
-
-      .hero-content p {
-        font-size: 18px;
-      }
-
-      .cars-container {
-        grid-template-columns: 1fr;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .car-card img {
-        height: 280px;
-      }
-
-      .logo img {
-        width: 65px;
-        height: 65px;
-      }
-
-      .quick-contact {
-        gap: 18px;
-      }
-
-      .quick-contact-item {
-        width: 95px;
-        height: 95px;
-      }
-
-      .quick-contact-item i {
-        font-size: 32px;
-      }
-    }
-
-  </style></head><body>  <!-- ================= HEADER ================= -->  <header><div class="logo">
-
-  <img src="logo.png"
-       alt="Amar Krupa Self Drive Logo">
-
-  <h2>
-    AMAR KRUPA<br>
-    <span>SELF DRIVE</span>
-  </h2>
-
-</div>
-
-<nav>
-
-  <a href="#home">Home</a>
-
-  <a href="#cars">Our Cars</a>
-
-  <a href="#about">About</a>
-
-  <a href="#contact">Contact</a>
-
-</nav>
-
-  </header>  <!-- ================= HERO ================= -->  <section class="hero" id="home"><video autoplay muted loop playsinline>
-
-  <source src="Amarkrupa.mp4" type="video/mp4">
-
-</video>
-
-<div class="hero-content">
-
-  <h1>
-    AMAR KRUPA <span>SELF DRIVE</span>
-  </h1>
-
-  <p>
-    Your Journey, Your Control
-  </p>
-
-  <a href="#cars"
-     class="btn btn-primary">
-
-    🚗 View Our Cars
-
-  </a>
-
-  <a href="https://wa.me/919313045252"
-     class="btn btn-orange">
-
-    💬 Book on WhatsApp
-
-  </a>
-
-</div>
-
-  </section>  <!-- ================= ABOUT ================= -->  <section id="about"><h2 class="section-title">
-  About <span>Us</span>
-</h2>
-
-<div class="about">
-
-  <p>
-
-    Welcome to
-    <b>Amar Krupa Self Drive</b>.
-
-    Enjoy your journey with our
-    comfortable and reliable
-    self-drive car service in Botad.
-
-    Choose your destination,
-    take control and enjoy the ride.
-
-  </p>
-
-</div>
-
-  </section>  <!-- ================= QUICK CONTACT ================= -->  <div class="quick-contact"><a href="tel:+919313045252"
-   class="quick-contact-item call-icon">
-
-  <i class="fa-solid fa-phone"></i>
-
-  <span>Call Now</span>
-
-</a>
-
-
-<a href="https://wa.me/919313045252"
-   target="_blank"
-   class="quick-contact-item whatsapp-icon">
-
-  <i class="fa-brands fa-whatsapp"></i>
-
-  <span>WhatsApp</span>
-
-</a>
-
-
-<a href="https://www.instagram.com/amarkrupa_self_drive"
-   target="_blank"
-   class="quick-contact-item instagram-icon">
-
-  <i class="fa-brands fa-instagram"></i>
-
-  <span>Instagram</span>
-
-</a>
-
-  </div>  <!-- ================= OUR CARS ================= -->  <section id="cars"><h2 class="section-title">
-  Our <span>Cars</span>
-</h2>
-
-
-<div class="cars-container">
-
-
-  <!-- ================= THAR ================= -->
-
-  <div class="car-card">
-
-    <img src="thar.jpg"
-         alt="Mahindra Thar">
-
-    <div class="car-info">
-
-      <h3>
-        Mahindra Thar
-      </h3>
-
-      <p>
-        🚗 Self Drive Available
-      </p>
-
-      <p>
-        📍 Botad, Gujarat
-      </p>
-
-      <a href="tel:+919313045252"
-         class="btn btn-primary">
-
-        📞 Call Now
-
-      </a>
-
-      <a href="https://wa.me/919313045252"
-         target="_blank"
-         class="btn btn-orange">
-
-        💬 Book Now
-
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- ================= SWIFT ================= -->
-
-  <div class="car-card">
-
-    <img src="swift.jpg"
-         alt="Maruti Suzuki Swift">
-
-    <div class="car-info">
-
-      <h3>
-        Maruti Suzuki Swift
-      </h3>
-
-      <p>
-        🚗 Self Drive Available
-      </p>
-
-      <p>
-        📍 Botad, Gujarat
-      </p>
-
-      <a href="tel:+919313045252"
-         class="btn btn-primary">
-
-        📞 Call Now
-
-      </a>
-
-      <a href="https://wa.me/919313045252"
-         target="_blank"
-         class="btn btn-orange">
-
-        💬 Book Now
-
-      </a>
-
-    </div>
-
-  </div>
-
-
-</div>
-
-  </section>  <!-- ================= WHY CHOOSE US ================= -->  <section><h2 class="section-title">
-  Why <span>Choose Us?</span>
-</h2>
-
-
-<div class="features">
-
-
-  <div class="feature">
-
-    <div class="icon">
-      🚗
-    </div>
-
-    <h3>
-      Self Drive
-    </h3>
-
-    <p>
-      Drive your way and enjoy
-      complete freedom.
-    </p>
-
-  </div>
-
-
-  <div class="feature">
-
-    <div class="icon">
-      ⭐
-    </div>
-
-    <h3>
-      Quality Service
-    </h3>
-
-    <p>
-      We provide a smooth and
-      convenient experience.
-    </p>
-
-  </div>
-
-
-  <div class="feature">
-
-    <div class="icon">
-      📞
-    </div>
-
-    <h3>
-      Easy Booking
-    </h3>
-
-    <p>
-      Call or WhatsApp us
-      for quick booking.
-    </p>
-
-  </div>
-
-
-</div>
-
-  </section>  <!-- ================= CONTACT ================= -->  <section class="contact"
-           id="contact"><h2 class="section-title">
-  Contact <span>Us</span>
-</h2>
-
-<div class="contact-info">
-
-  📞 Mobile:
-  <b>9313045252</b>
-
-  <br>
-
-  📍 Address:
-  <b>Botad, Gujarat - 364710</b>
-
-</div>
-
-<p>
-  We are happy to help you
-  with your self-drive car booking.
-</p>
-
-  </section>  <!-- ================= FOOTER ================= -->  <footer><p>
-  © 2026 Amar Krupa Self Drive.
-  All Rights Reserved.
-</p>
-
-<p>
-  Your Journey, Your Control
-</p>
-
-  </footer></body>
-</html>
