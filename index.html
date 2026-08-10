@@ -1,408 +1,929 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Amar Krupa Self Drive | Botad</title>
-
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #f5f7fa;
-      color: #172033;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      background: #ffffff;
-      padding: 12px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo img {
-      width: 75px;
-      height: 75px;
-      object-fit: contain;
-    }
-
-    .logo h2 {
-      color: #07549b;
-      font-size: 20px;
-      line-height: 1.2;
-    }
-
-    .logo span {
-      color: #e87922;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #172033;
-      margin-left: 22px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #07549b;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 50px 20px;
-      position: relative;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: white;
-      max-width: 800px;
-    }
-
-    .hero-content h1 {
-      font-size: 55px;
-      margin-bottom: 15px;
-    }
-
-    .hero-content h1 span {
-      color: #ff8a25;
-    }
-
-    .hero-content p {
-      font-size: 24px;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      margin: 8px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: #07549b;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #063b70;
-      transform: translateY(-3px);
-    }
-
-    .btn-orange {
-      background: #e87922;
-      color: white;
-    }
-
-    .btn-orange:hover {
-      background: #c75e0c;
-      transform: translateY(-3px);
-    }
-
-    /* ================= SECTIONS ================= */
-
-    section {
-      padding: 70px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 35px;
-      color: #07549b;
-      margin-bottom: 45px;
-    }
-
-    .section-title span {
-      color: #e87922;
-    }
-
-    /* ================= ABOUT ================= */
-
-    .about {
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
-      font-size: 19px;
-      line-height: 1.8;
-    }
-
-    /* ================= QUICK CONTACT ================= */
-
-    .quick-contact {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 35px;
-      padding: 35px 20px;
-      background: #ffffff;
-      flex-wrap: wrap;
-    }
-
-    .quick-contact-item {
-      width: 105px;
-      height: 105px;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    }
-
-    .quick-contact-item i {
-      font-size: 38px;
-      margin-bottom: 8px;
-    }
-
-    .quick-contact-item span {
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .quick-contact-item:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-
-    .call-icon {
-      background: #07549b;
-    }
-
-    .whatsapp-icon {
-      background: #25D366;
-    }
-
-    .instagram-icon {
-      background: #E1306C;
-    }
-
-    /* ================= CARS ================= */
-
-    .cars-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .car-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .car-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
-    }
-
-    .car-card img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .car-info {
-      padding: 25px;
-    }
-
-    .car-info h3 {
-      font-size: 28px;
-      color: #07549b;
-      margin-bottom: 10px;
-    }
-
-    .car-info p {
-      color: #555;
-      margin-bottom: 15px;
-    }
-
-    /* ================= BOOKING ================= */
-
-    .booking-section {
-      background: #eef3f8;
-    }
-
-    .booking-box {
-      max-width: 850px;
-      margin: auto;
-      background: white;
-      padding: 35px;
-      border-radius: 22px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    }
-
-    .booking-box h3 {
-      text-align: center;
-      color: #07549b;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .booking-subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 30px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #172033;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #d5dbe3;
-      border-radius: 10px;
-      font-size: 16px;
-      outline: none;
-      background: #fff;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: #07549b;
-      box-shadow: 0 0 0 2px rgba(7,84,155,0.10);
-    }
-
-    .form-group textarea {
-      height: 100px;
-      resize: vertical;
-    }
-
-    .booking-button {
-      width: 100%;
-      background: #25D366;
-      color: white;
-      padding: 16px;
-      border: none;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .booking-button:hover {
-      background: #1da851;
-      transform: translateY(-2px);
-    }
-
-    .booking-note {
-      text-align: center;
-      margin-top: 15px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    /* ================= WHY CHOOSE US ================= */
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .feature {
-      background: white;
-      padding: 30px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    }
-
-    .feature .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .feature h3 {
-      color: #07549b;
-      margin-bottom: 10px;
-    }
-
-    /* ================= CONTACT ================= */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amar Krupa Self Drive | Botad</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f5f7fa;
+  color:#172033;
+}
+
+/* HEADER */
+header{
+  background:white;
+  padding:12px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo img{
+  width:75px;
+  height:75px;
+  object-fit:contain;
+}
+
+.logo h2{
+  color:#07549b;
+  font-size:20px;
+  line-height:1.2;
+}
+
+.logo span{
+  color:#e87922;
+}
+
+nav a{
+  text-decoration:none;
+  color:#172033;
+  margin-left:20px;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:#07549b;
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:50px 20px;
+  position:relative;
+  overflow:hidden;
+  background:#000;
+}
+
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:white;
+  max-width:850px;
+}
+
+.hero-content h1{
+  font-size:55px;
+  margin-bottom:15px;
+}
+
+.hero-content h1 span{
+  color:#ff8a25;
+}
+
+.hero-content p{
+  font-size:24px;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  margin:7px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
+
+.blue{
+  background:#07549b;
+  color:white;
+}
+
+.orange{
+  background:#e87922;
+  color:white;
+}
+
+.green{
+  background:#25d366;
+  color:white;
+}
+
+/* SECTIONS */
+section{
+  padding:70px 7%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:35px;
+  color:#07549b;
+  margin-bottom:40px;
+}
+
+.section-title span{
+  color:#e87922;
+}
+
+/* ABOUT */
+.about{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  font-size:19px;
+  line-height:1.8;
+}
+
+/* CONTACT ICONS */
+.quick-contact{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:35px 20px;
+  background:white;
+  flex-wrap:wrap;
+}
+
+.quick-contact-item{
+  width:105px;
+  height:105px;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  color:white;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.quick-contact-item i{
+  font-size:38px;
+  margin-bottom:8px;
+}
+
+.call{
+  background:#07549b;
+}
+
+.whatsapp{
+  background:#25d366;
+}
+
+.instagram{
+  background:#e1306c;
+}
+
+/* CARS */
+.cars-container{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.car-card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+.car-card img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  display:block;
+}
+
+.car-info{
+  padding:25px;
+}
+
+.car-info h3{
+  font-size:28px;
+  color:#07549b;
+  margin-bottom:10px;
+}
+
+.car-info p{
+  color:#555;
+  margin:8px;
+}
+
+/* BOOKING */
+.booking-section{
+  background:#eef3f8;
+}
+
+.booking-box{
+  max-width:850px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+.booking-box h3{
+  text-align:center;
+  color:#07549b;
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.booking-subtitle{
+  text-align:center;
+  color:#666;
+  margin-bottom:30px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group label{
+  display:block;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid #d5dbe3;
+  border-radius:10px;
+  font-size:16px;
+  outline:none;
+}
+
+.form-group textarea{
+  height:100px;
+  resize:vertical;
+}
+
+.booking-button{
+  width:100%;
+  padding:16px;
+  background:#25d366;
+  color:white;
+  border:0;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.booking-note{
+  text-align:center;
+  color:#777;
+  font-size:14px;
+  margin-top:15px;
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.feature{
+  background:white;
+  padding:30px;
+  text-align:center;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.feature .icon{
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.feature h3{
+  color:#07549b;
+  margin-bottom:10px;
+}
+
+/* CONTACT */
+.contact{
+  background:#07549b;
+  color:white;
+  text-align:center;
+}
+
+.contact .section-title{
+  color:white;
+}
+
+.contact-info{
+  font-size:20px;
+  line-height:2;
+}
+
+/* FOOTER */
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+footer p{
+  margin:5px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav{
+    text-align:center;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:5px;
+    font-size:14px;
+  }
+
+  .hero-content h1{
+    font-size:38px;
+  }
+
+  .hero-content p{
+    font-size:18px;
+  }
+
+  .cars-container{
+    grid-template-columns:1fr;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .booking-box{
+    padding:25px 18px;
+  }
+
+  .car-card img{
+    height:280px;
+  }
+
+  .logo img{
+    width:65px;
+    height:65px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    <img src="logo.png" alt="Amar Krupa Self Drive">
+    <h2>
+      AMAR KRUPA<br>
+      <span>SELF DRIVE</span>
+    </h2>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#cars">Our Cars</a>
+    <a href="#booking">Book Now</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
+
+<section class="hero" id="home">
+
+  <video autoplay muted loop playsinline>
+    <source src="Amarkrupa.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
+
+    <h1>
+      AMAR KRUPA <span>SELF DRIVE</span>
+    </h1>
+
+    <p>Your Journey, Your Control</p>
+
+    <a href="#cars" class="btn blue">
+      🚗 View Our Cars
+    </a>
+
+    <a href="#booking" class="btn orange">
+      📅 Book Your Car
+    </a>
+
+  </div>
+
+</section>
+
+<section id="about">
+
+  <h2 class="section-title">
+    About <span>Us</span>
+  </h2>
+
+  <div class="about">
+
+    <p>
+      Welcome to <b>Amar Krupa Self Drive</b>.
+      Enjoy your journey with our comfortable and reliable
+      self-drive car service in Botad.
+      Choose your destination, take control and enjoy the ride.
+    </p>
+
+  </div>
+
+</section>
+
+<div class="quick-contact">
+
+  <a href="tel:+919313045252" class="quick-contact-item call">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call Now</span>
+  </a>
+
+  <a href="https://wa.me/919313045252"
+     target="_blank"
+     class="quick-contact-item whatsapp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+
+  <a href="https://www.instagram.com/amarkrupa_self_drive"
+     target="_blank"
+     class="quick-contact-item instagram">
+    <i class="fa-brands fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+
+</div>
+
+<section id="cars">
+
+  <h2 class="section-title">
+    Our <span>Cars</span>
+  </h2>
+
+  <div class="cars-container">
+
+    <div class="car-card">
+
+      <img src="thar.jpg" alt="Mahindra Thar">
+
+      <div class="car-info">
+
+        <h3>Mahindra Thar</h3>
+
+        <p>🚗 Self Drive Available</p>
+        <p>📍 Botad, Gujarat</p>
+
+        <a href="#booking"
+           class="btn blue"
+           onclick="selectCar('Mahindra Thar')">
+          📅 Book This Car
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="car-card">
+
+      <img src="swift.jpg" alt="Maruti Suzuki Swift">
+
+      <div class="car-info">
+
+        <h3>Maruti Suzuki Swift</h3>
+
+        <p>🚗 Self Drive Available</p>
+        <p>📍 Botad, Gujarat</p>
+
+        <a href="#booking"
+           class="btn blue"
+           onclick="selectCar('Maruti Suzuki Swift')">
+          📅 Book This Car
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="booking-section" id="booking">
+
+  <h2 class="section-title">
+    <span>Book</span> Your Car
+  </h2>
+
+  <div class="booking-box">
+
+    <h3>🚗 Self Drive Booking</h3>
+
+    <p class="booking-subtitle">
+      Fill the details and send your booking request on WhatsApp.
+    </p>
+
+    <form onsubmit="sendBooking(event)">
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>Select Car *</label>
+
+          <select id="car" required>
+
+            <option value="">-- Select Car --</option>
+
+            <option value="Mahindra Thar">
+              Mahindra Thar
+            </option>
+
+            <option value="Maruti Suzuki Swift">
+              Maruti Suzuki Swift
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Your Name *</label>
+
+          <input type="text"
+                 id="name"
+                 placeholder="Enter your name"
+                 required>
+
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>Mobile Number *</label>
+
+          <input type="tel"
+                 id="mobile"
+                 placeholder="10 digit mobile number"
+                 maxlength="10"
+                 required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Pickup Location *</label>
+
+          <input type="text"
+                 id="location"
+                 placeholder="Enter pickup location"
+                 required>
+
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>Pickup Date *</label>
+
+          <input type="date"
+                 id="pickupDate"
+                 required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Return Date *</label>
+
+          <input type="date"
+                 id="returnDate"
+                 required>
+
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>Pickup Time *</label>
+
+          <input type="time"
+                 id="pickupTime"
+                 required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Return Time *</label>
+
+          <input type="time"
+                 id="returnTime"
+                 required>
+
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Additional Message</label>
+
+        <textarea id="message"
+                  placeholder="Any special request?"></textarea>
+
+      </div>
+
+      <button type="submit" class="booking-button">
+        <i class="fa-brands fa-whatsapp"></i>
+        Confirm Booking on WhatsApp
+      </button>
+
+      <p class="booking-note">
+        Booking request will be sent directly to Amar Krupa Self Drive.
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">
+    Why <span>Choose Us?</span>
+  </h2>
+
+  <div class="features">
+
+    <div class="feature">
+
+      <div class="icon">🚗</div>
+
+      <h3>Self Drive</h3>
+
+      <p>
+        Drive your way and enjoy complete freedom.
+      </p>
+
+    </div>
+
+    <div class="feature">
+
+      <div class="icon">⭐</div>
+
+      <h3>Quality Service</h3>
+
+      <p>
+        We provide a smooth and convenient experience.
+      </p>
+
+    </div>
+
+    <div class="feature">
+
+      <div class="icon">📞</div>
+
+      <h3>Easy Booking</h3>
+
+      <p>
+        Call or WhatsApp us for quick booking.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+  <h2 class="section-title">
+    Contact <span>Us</span>
+  </h2>
+
+  <div class="contact-info">
+
+    📞 Mobile:
+    <b>9313045252</b>
+
+    <br>
+
+    📍 Address:
+    <b>Botad, Gujarat - 364710</b>
+
+  </div>
+
+  <p>
+    We are happy to help you with your self-drive car booking.
+  </p>
+
+</section>
+
+<footer>
+
+  <p>
+    © 2026 Amar Krupa Self Drive. All Rights Reserved.
+  </p>
+
+  <p>
+    Your Journey, Your Control
+  </p>
+
+</footer>
+
+<script>
+
+function selectCar(carName){
+
+  document.getElementById("car").value = carName;
+
+}
+
+const today = new Date();
+
+const year = today.getFullYear();
+
+const month =
+  String(today.getMonth() + 1).padStart(2,"0");
+
+const day =
+  String(today.getDate()).padStart(2,"0");
+
+const todayDate =
+  year + "-" + month + "-" + day;
+
+document.getElementById("pickupDate").min = todayDate;
+
+document.getElementById("returnDate").min = todayDate;
+
+document.getElementById("pickupDate").addEventListener(
+  "change",
+  function(){
+
+    document.getElementById("returnDate").min = this.value;
+
+  }
+);
+
+function sendBooking(event){
+
+  event.preventDefault();
+
+  const car =
+    document.getElementById("car").value;
+
+  const name =
+    document.getElementById("name").value;
+
+  const mobile =
+    document.getElementById("mobile").value;
+
+  const location =
+    document.getElementById("location").value;
+
+  const pickupDate =
+    document.getElementById("pickupDate").value;
+
+  const returnDate =
+    document.getElementById("returnDate").value;
+
+  const pickupTime =
+    document.getElementById("pickupTime").value;
+
+  const returnTime =
+    document.getElementById("returnTime").value;
+
+  const message =
+    document.getElementById("message").value;
+
+  if(!/^[0-9]{10}$/.test(mobile)){
+
+    alert("Please enter a valid 10 digit mobile number.");
+
+    return;
+
+  }
+
+  if(returnDate < pickupDate){
+
+    alert("Return date cannot be before pickup date.");
+
+    return;
+
+  }
+
+  const text =
+`🚗 NEW SELF DRIVE BOOKING
+
+🚘 Car: ${car}
+👤 Name: ${name}
+📞 Mobile: ${mobile}
+📍 Pickup Location: ${location}
+
+📅 Pickup Date: ${pickupDate}
+⏰ Pickup Time: ${pickupTime}
+
+📅 Return Date: ${returnDate}
+⏰ Return Time: ${returnTime}
+
+📝 Message: ${message || "No additional message"}
+
+━━━━━━━━━━━━━━━━━━
+Amar Krupa Self Drive`;
+
+  const url =
+    "https://wa.me/919313045252?text=" +
+    encodeURIComponent(text);
+
+  window.location.href = url;
+
+}
+
+</script>
+
+</body>
+</html>
